@@ -1,0 +1,43 @@
+{% extends 'base.html'%}
+{% block title %} contact {% endblock %}
+
+{% block content %} 
+<div class="flex flex-col items-center justify-center h-screen text-green-500">
+    <h1 class="text-4xl font-bold mb-4">suivez-nous</h1>
+    <div class="flex flex-col items-center text-center">
+        <p>Nous suivre sur les réseaux sociaux pour ne rater aucune actualité !</p>
+        pour nous contacter, vous pouvez nous envoyer un courriel à l'adresse suivante : <a href="mailto:
+        <div class="flex flex-row justify-center gap-4 mt-4">
+            <a class="bouton_insta" href="https://www.instagram.com/fsae.uqac/" target="_blank" rel="noopener"></a>
+            <a class="bouton_gmail" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=formuleuqac@gmail.com" target="_blank" rel="noopener"></a>
+        </div>
+    </div>
+</div>
+<style>
+    .bouton_insta {
+        position: static !important;
+        display: inline-flex;
+        align-items: center;
+        color: white;
+        background-image: url("{{ url_for('static', filename='insta.png') }}");
+        background-size: cover;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    .bouton_gmail {
+        position: static !important;
+        display: inline-flex;
+        align-items: center;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+</style>
+{% endblock %}

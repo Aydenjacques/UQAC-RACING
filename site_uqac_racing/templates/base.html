@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="https://cdn.tailwindcss.com"></script>
+
+<body class="min-h-screen flex flex-col bg-gradient-to-b from-neutral-700 via-neutral-750 to-neutral-800">
+    <header class="w-full flex items-center bg-zinc-800 text-gray-300 p-4">
+  
+        <!-- 1. Conteneur Logo (utilisez w-auto pour laisser le logo prendre sa place) -->
+        <div class="flex-shrink-0">
+            <img src="{{ url_for('static', filename='FSAE_LOGO.svg') }}" alt="image de logo" class="h-16 w-auto object-contain">
+        </div>
+
+        <!-- 2. Liens de navigation centrés -->
+        <div class="flex-1 flex justify-center space-x-6">
+            <a class="liens {% if request.path == url_for('acceuil') %}actif{% endif %}" href="{{ url_for('acceuil') }}" {% if request.path == url_for('acceuil') %}aria-current="page"{% endif %}>Accueil</a>
+            <a class="liens {% if request.path == url_for('commanditaire') %}actif{% endif %}" href="{{ url_for('commanditaire') }}" {% if request.path == url_for('commanditaire') %}aria-current="page"{% endif %}>Commanditaire</a>
+            <a class="liens {% if request.path == url_for('equipe') %}actif{% endif %}" href="{{ url_for('equipe') }}" {% if request.path == url_for('equipe') %}aria-current="page"{% endif %}>Équipe</a>
+            <a class="liens {% if request.path == url_for('galerie') %}actif{% endif %}" href="{{ url_for('galerie') }}" {% if request.path == url_for('galerie') %}aria-current="page"{% endif %}>Galerie</a>
+            <a class="liens {% if request.path == url_for('voiture') %}actif{% endif %}" href="{{ url_for('voiture') }}" {% if request.path == url_for('voiture') %}aria-current="page"{% endif %}>Voiture</a>
+            <a class="liens {% if request.path == url_for('contact') %}actif{% endif %}" href="{{ url_for('contact') }}" {% if request.path == url_for('contact') %}aria-current="page"{% endif %}>Contact</a>
+        </div>
+
+    </header>
+    
+    
+    
+    <main class="relative flex-1 overflow-x-hidden">
+        <img class="image" src="{{ url_for('static', filename='image_fond.png') }}" alt="">
+
+        <div class="texte relative z-10">
+            <div >
+                
+                {% block content%} {%endblock%}
+            </div>
+            
+        </div>
+    </main>
+    <footer class="mt-auto">
+        <div class="flex justify-center items-center bg-zinc-800 text-gray-300 p-4">
+            
+            <div class="flex flex-col items-center ml-4">
+                <div class="flex items-center space-x-4">
+                    <a class="bouton_insta" href="https://www.instagram.com/fsae.uqac/" target="_blank" rel="noopener" aria-label="Instagram"></a>
+                    <a class="bouton_gmail" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=formuleuqac@gmail.com" target="_blank" rel="noopener" aria-label="Envoyer un courriel"></a>
+                    
+                </div>
+                <p>Email : formuleuqac@gmail.com</p>
+                <p> adresse : 555, boulevard de l'Université, Chicoutimi (Québec) Canada</p>
+                <p> local : P1-3005</p>
+                <p>&copy; 2026 Uqac Racing. Tous droits réservés.</p>
+            </div>
+            
+        </div>
+    </footer>
+</body>
+
+</html>
+<style>
+    .liens{
+        padding: 10px;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+    }
+    .liens:hover{
+        color : #236837;
+    }
+    .liens.actif{
+        color: #236837;
+        font-weight: bold;
+        border-bottom: 2px solid #236837;
+    }
+
+    .image{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 0;
+    }
+    .bouton_insta{
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        background-image: url("{{ url_for('static', filename='insta.png') }}");
+        background-size: cover;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+    .bouton_gmail{
+        position: fixed;
+        bottom: 20px;
+        right: 80px;
+        width: 50px;
+        height: 50px;
+        display: inline-flex;
+        z-index: 20;
+        background-image: url("{{ url_for('static', filename='gmail-logo-verte.png') }}");
+        background-size: cover;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+</style>
