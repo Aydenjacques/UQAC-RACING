@@ -6,8 +6,11 @@
     <header class="w-full flex items-center bg-zinc-800 text-gray-300 p-4">
   
         <!-- 1. Conteneur Logo (utilisez w-auto pour laisser le logo prendre sa place) -->
-        <div class="flex-shrink-0">
-            <img src="{{ url_for('static', filename='FSAE_LOGO.svg') }}" alt="image de logo" class="h-16 w-auto object-contain">
+         
+        <div class="flex-shrink-0 bg-[radial-gradient(circle,rgb(113_113_122)_0%,rgb(113_113_122)_35%,rgb(39_39_42)_100%)] px-5 py-1 rounded-md">
+            <a class="{% if request.path == url_for('acceuil') %}actif{% endif %}" href="{{ url_for('acceuil') }}" {% if request.path == url_for('acceuil') %}aria-current="page"{% endif %}>
+            <img src="{{ url_for('static', filename='FSAE_LOGO_transparent.svg') }}" alt="image de logo" class="h-16 w-auto object-contain">
+            </a>
         </div>
 
         <!-- 2. Liens de navigation centrés -->
