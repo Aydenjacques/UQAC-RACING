@@ -3,7 +3,7 @@
 <script src="https://cdn.tailwindcss.com"></script>
 
 <body class="min-h-screen flex flex-col bg-gradient-to-b from-neutral-700 via-neutral-750 to-neutral-800">
-    <header class="w-full flex items-center bg-zinc-800 text-gray-300 p-4">
+    <header class="relative w-full flex items-center bg-zinc-800 text-gray-300 p-4">
   
         <!-- 1. Conteneur Logo (utilisez w-auto pour laisser le logo prendre sa place) -->
          
@@ -14,7 +14,7 @@
         </div>
 
         <!-- 2. Liens de navigation centrés -->
-        <div class="flex-1 flex justify-center space-x-6">
+        <div class="absolute left-1/2 -translate-x-1/2 flex items-center space-x-6">
             <a class="liens {% if request.path == url_for('acceuil') %}actif{% endif %}" href="{{ url_for('acceuil') }}" {% if request.path == url_for('acceuil') %}aria-current="page"{% endif %}>Accueil</a>
             <a class="liens {% if request.path == url_for('commanditaire') %}actif{% endif %}" href="{{ url_for('commanditaire') }}" {% if request.path == url_for('commanditaire') %}aria-current="page"{% endif %}>Commanditaire</a>
             <a class="liens {% if request.path == url_for('equipe') %}actif{% endif %}" href="{{ url_for('equipe') }}" {% if request.path == url_for('equipe') %}aria-current="page"{% endif %}>Équipe</a>
@@ -91,21 +91,19 @@
         background-image: url("{{ url_for('static', filename='insta.png') }}");
         background-size: cover;
         border: none;
-        border-radius: 50%;
         cursor: pointer;
     }
     .bouton_gmail{
         position: fixed;
         bottom: 20px;
         right: 80px;
-        width: 50px;
+        width: 70px;
         height: 50px;
         display: inline-flex;
         z-index: 20;
         background-image: url("{{ url_for('static', filename='gmail-logo-verte.png') }}");
         background-size: cover;
         border: none;
-        border-radius: 50%;
         cursor: pointer;
     }
 
