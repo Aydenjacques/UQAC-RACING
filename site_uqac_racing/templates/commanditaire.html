@@ -2,5 +2,41 @@
 {% block title %} commanditaire {% endblock %}
 
 {% block content %} 
+<div>
+    <p class="text-center text-3xl mt-10 text-white font-bold">Nos commanditaires</p>
+    <p class="text-center text-l mt-10 text-white">Nous remercions sincèrement l'implication de nos partenaires !</p>
+</div>
+<div class="mx-[20%] my-6">
+    <hr class="my-6 border-t-2 border-gray-300" />
+    <div class="flex justify-center gap-4">
+        <a class="metal_baie" href="https://groupemetalbaie.ca/" target="_blank" rel="noopener" aria-label="Metal Baie"></a>
+    </div>
+</div>
+
+<style>
+    .metal_baie {
+        display: block;
+        width: 165px;
+        height: 165px;
+
+        background-image: url("{{ url_for('static', filename='metal_baie.png') }}");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+
+        cursor: pointer;
+        border-radius: 50%;
+
+        /* Cercle invisible au départ */
+        border: 3px solid transparent;
+
+        transition: 0.3s ease;
+    }
+
+    .metal_baie:hover {
+        border-color: rgb(5, 77, 127);
+        background-color: rgb(5, 77, 127);
+    }
+</style>
 
 {% endblock %}
