@@ -83,26 +83,24 @@
         z-index: 0;
     }
     .bouton_insta{
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
+        display: block;
         width: 50px;
         height: 50px;
         background-image: url("{{ url_for('static', filename='insta.png') }}");
-        background-size: cover;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
         border: none;
         cursor: pointer;
     }
     .bouton_gmail{
-        position: fixed;
-        bottom: 20px;
-        right: 80px;
-        width: 70px;
+        display: block;
+        width: 50px;
         height: 50px;
-        display: inline-flex;
-        z-index: 20;
         background-image: url("{{ url_for('static', filename='gmail-logo-verte.png') }}");
-        background-size: cover;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
         border: none;
         cursor: pointer;
     }
