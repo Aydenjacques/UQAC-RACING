@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="https://cdn.tailwindcss.com"></script>
+
+<body class="min-h-screen flex flex-col bg-gradient-to-b from-neutral-700 via-neutral-750 to-neutral-800">
+    <header class="relative w-full flex items-center bg-zinc-800 text-gray-300 p-4">
+  
+        <!-- 1. Conteneur Logo (utilisez w-auto pour laisser le logo prendre sa place) -->
+         
+        <div class="flex-shrink-0 bg-[radial-gradient(circle,rgb(113_113_122)_0%,rgb(113_113_122)_35%,rgb(39_39_42)_100%)] px-5 py-1 rounded-md">
+            <a class="actif" href="/acceuil.html" aria-current="page">
+            <img src="/static/FSAE_LOGO_transparent.svg" alt="image de logo" class="h-16 w-auto object-contain">
+            </a>
+        </div>
+
+        <!-- 2. Liens de navigation centrés -->
+        <div class="absolute left-1/2 -translate-x-1/2 flex items-center space-x-6">
+            <a class="liens actif" href="/acceuil.html" aria-current="page">Accueil</a>
+            <a class="liens " href="/commanditaire.html" >Commanditaire</a>
+            <a class="liens " href="/equipe.html" >Équipe</a>
+            <a class="liens " href="/galerie.html" >Galerie</a>
+            <a class="liens " href="/voiture.html" >Voiture</a>
+            <a class="liens " href="/contact.html" >Contact</a>
+        </div>
+
+    </header>
+    
+    
+    
+    <main class="relative flex-1 overflow-x-hidden">
+        <img class="image" src="/static/image_fond.png" alt="">
+
+        <div class="texte relative z-10">
+            <div >
+                
+                
+<div class=" w-full justify-center items-center flex mt-20 flex">
+    <p class="[-webkit-text-stroke:1px_rgba(255,255,255,1)] text-8xl tracking-wider font-bold text-[#0E441E]">UQAC</p>
+    <p class="[-webkit-text-stroke:1px_rgba(255,255,255,1)] text-8xl tracking-wider font-bold">-RACING</p>
+</div>
+<div>
+    <p class="text-center text-l mt-10 text-white font-bold">L'équipe la plus nordique de la formule SAE !</p>
+</div>
+<div class="container">
+        <h1>La conception d'une vraie voiture de course</h1>
+    <p>De 2012 à 2018, des étudiants de l'UQAC ont imaginé et fabriqué une monoplace dans le cadre de la compétition internationale Formula SAE Michigan. Après plusieurs années de pause, UQAC Racing reprend aujourd'hui la piste avec une ambition claire : faire renaître ce projet et bâtir la prochaine génération de voitures de course de l'Université.</p>
+    <p>Cette relance, c'est bien plus que la construction d'une voiture. C'est le retour d'un défi qui rassemble, où chaque idée, chaque calcul et chaque pièce fabriquée nous rapproche du départ. Des premières esquisses aux essais sur piste, notre équipe apprend, innove et transforme ses connaissances en une machine conçue pour la performance.</p>
+    <p>Animés par la passion et la détermination, nous avançons un morceau à la fois pour redonner vie à UQAC Racing. Notre objectif : faire rayonner le savoir-faire étudiant, représenter fièrement l'UQAC et écrire le prochain chapitre de son histoire en Formule SAE.</p>
+</div>
+<style>
+    .container {
+        width: min(90%, 900px);
+        margin: 2rem auto;
+        color: #f6f2f2;
+        text-align: center;
+    }
+    .container h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+    }
+</style>
+
+            </div>
+            
+        </div>
+    </main>
+    <footer class="mt-auto">
+        <div class="flex justify-center items-center bg-zinc-800 text-gray-300 p-4">
+            
+            <div class="flex flex-col items-center ml-4">
+                <div class="flex items-center space-x-4">
+                    <a class="bouton_insta" href="https://www.instagram.com/fsae.uqac/" target="_blank" rel="noopener" aria-label="Instagram"></a>
+                    <a class="bouton_gmail" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=formuleuqac@gmail.com" target="_blank" rel="noopener" aria-label="Envoyer un courriel"></a>
+                    
+                </div>
+                <p>Email : formuleuqac@gmail.com</p>
+                <p> adresse : 555, boulevard de l'Université, Chicoutimi (Québec) Canada</p>
+                <p> local : P1-3005</p>
+                <p>&copy; 2026 Uqac Racing. Tous droits réservés.</p>
+            </div>
+            
+        </div>
+    </footer>
+</body>
+
+</html>
+<style>
+    .liens{
+        padding: 10px;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+    }
+    .liens:hover{
+        color : #236837;
+    }
+    .liens.actif{
+        color: #236837;
+        font-weight: bold;
+        border-bottom: 2px solid #236837;
+    }
+
+    .image{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 0;
+    }
+    .bouton_insta{
+        display: block;
+        width: 50px;
+        height: 50px;
+        background-image: url("/static/insta.png");
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        border: none;
+        cursor: pointer;
+    }
+    .bouton_gmail{
+        display: block;
+        width: 50px;
+        height: 50px;
+        background-image: url("/static/gmail-logo-verte.png");
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        border: none;
+        cursor: pointer;
+    }
+
+</style>
